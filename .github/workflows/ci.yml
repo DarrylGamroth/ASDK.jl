@@ -51,9 +51,9 @@ jobs:
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
-      - name: Add PackageRegistry
+      - name: Add Package
         run: |
-          julia -e 'using Pkg; Pkg.Registry.add(Pkg.PackageSpec(url="https://github.com/DarrylGamroth/AlpaoSDK_jll.jl.git"))'
+          julia -e 'using Pkg; Pkg.add(Pkg.PackageSpec(url="https://github.com/DarrylGamroth/AlpaoSDK_jll.jl.git"))'
       - uses: julia-actions/cache@v2
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
